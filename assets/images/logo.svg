@@ -1,0 +1,9 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="霁智云图标志">
+  <rect x="18" y="18" width="156" height="156" fill="#071014" stroke="#3CE6D2" stroke-width="6"/>
+  <path d="M52 126C73 96 93 77 140 60" stroke="#FFD166" stroke-width="10" stroke-linecap="square"/>
+  <path d="M52 66H94C119 66 139 86 139 111V126H98" stroke="#3CE6D2" stroke-width="12" stroke-linecap="square" stroke-linejoin="round"/>
+  <circle cx="52" cy="66" r="10" fill="#FF6F61"/>
+  <circle cx="140" cy="60" r="10" fill="#8FF5B3"/>
+  <circle cx="98" cy="126" r="10" fill="#3CE6D2"/>
+  <path d="M70 101H116" stroke="#EEF8F8" stroke-width="8" stroke-linecap="square"/>
+</svg>

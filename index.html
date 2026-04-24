@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="上海霁智云图科技有限公司提供企业级大模型服务、API 工厂与视觉 AI 技术服务。"
+    />
+    <title>上海霁智云图科技有限公司</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="上海霁智云图科技有限公司首页">
+        <img class="brand-mark" src="assets/images/logo.svg" alt="" />
+        <span class="brand-copy">
+          <strong>霁智云图</strong>
+          <small>JIZHI CLOUD ATLAS</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#services">大模型服务</a>
+        <a href="#vision">视觉 AI</a>
+        <a href="#cases">案例</a>
+        <a href="#team">人员</a>
+        <a href="#architecture">架构</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <a class="header-cta" href="#contact">联系 CEO</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="公司介绍">
+        <canvas id="atlas-canvas" aria-hidden="true"></canvas>
+        <div class="hero-noise" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Vision for Applied Intelligence</p>
+          <h1>上海霁智云图科技有限公司</h1>
+          <p class="hero-lede">
+            让智能真正进入产业现场，把模型、视觉与工程能力连接成可持续进化的生产力。
+          </p>
+          <p class="vision-line" data-vision-line>让模型成为可运营的智能基础设施</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#intro">了解我们</a>
+            <a class="button ghost" href="#cases">查看案例</a>
+          </div>
+          <div class="hero-metrics" aria-label="核心能力指标">
+            <div>
+              <strong>LLM</strong>
+              <span>训练微调</span>
+            </div>
+            <div>
+              <strong>API</strong>
+              <span>聚合售卖</span>
+            </div>
+            <div>
+              <strong>CV</strong>
+              <span>视觉算法</span>
+            </div>
+          </div>
+        </div>
+        <aside class="hero-console" aria-label="平台运行状态">
+          <div class="console-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="console-line">
+            <span>MODEL ROUTER</span>
+            <strong>ONLINE</strong>
+          </div>
+          <div class="console-grid">
+            <span>训练任务</span>
+            <b>12</b>
+            <span>推理节点</span>
+            <b>38</b>
+            <span>知识库索引</span>
+            <b>8.6M</b>
+          </div>
+          <div class="signal-bars" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section intro" id="intro">
+        <div class="section-kicker">What We Build</div>
+        <h2>两条 AI 能力线，并行交付，也可组合落地</h2>
+        <p>
+          大模型服务覆盖训练、部署、API 聚合与 AI 工厂。视觉 AI 服务覆盖分割、质检、3D 视觉与图文理解。
+        </p>
+      </section>
+
+      <section class="section services" id="services">
+        <div class="section-head">
+          <span class="section-kicker">LLM Services</span>
+          <h2>大模型服务</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card" data-detail="training" tabindex="0" role="button" aria-label="查看定制化训练详情">
+            <span class="card-index">01</span>
+            <h3>定制化训练</h3>
+            <p>用企业数据训练专属模型。</p>
+            <em>查看详情</em>
+          </article>
+          <article class="service-card accent-cyan" data-detail="deployment" tabindex="0" role="button" aria-label="查看模型部署详情">
+            <span class="card-index">02</span>
+            <h3>模型部署</h3>
+            <p>部署到服务器、私有云或混合云。</p>
+            <em>查看详情</em>
+          </article>
+          <article class="service-card accent-amber" data-detail="api" tabindex="0" role="button" aria-label="查看 API 聚合店铺详情">
+            <span class="card-index">03</span>
+            <h3>API 聚合店铺</h3>
+            <p>统一聚合多模型 API。</p>
+            <em>查看详情</em>
+          </article>
+          <article class="service-card accent-coral" data-detail="factory" tabindex="0" role="button" aria-label="查看 AI 工厂详情">
+            <span class="card-index">04</span>
+            <h3>AI 工厂</h3>
+            <p>持续生产稳定 API 能力。</p>
+            <em>查看详情</em>
+          </article>
+        </div>
+      </section>
+
+      <section class="split-section" id="factory">
+        <div class="factory-visual" aria-hidden="true">
+          <div class="pipeline">
+            <span data-detail="factory">模型接入</span>
+            <span data-detail="api">统一路由</span>
+            <span data-detail="factory">API 生产</span>
+            <span data-detail="deployment">监控计费</span>
+          </div>
+        </div>
+        <div class="split-copy">
+          <span class="section-kicker">API Store & AI Factory</span>
+          <h2>从模型部署到 API 售卖</h2>
+          <p>
+            聚合自有模型、开源模型和第三方模型，形成统一入口。
+          </p>
+          <ul class="check-list">
+            <li>鉴权、限流、计费、路由</li>
+            <li>文本、图像、多模态 API</li>
+            <li>部署、监控、评测、运维</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section vision" id="vision">
+        <div class="section-head">
+          <span class="section-kicker">Visual AI Services</span>
+          <h2>视觉 AI 服务</h2>
+        </div>
+        <div class="vision-layout">
+          <div class="vision-grid">
+            <article data-detail="segmentation" tabindex="0" role="button" aria-label="查看图像分割详情">
+              <h3>图像分割</h3>
+              <p>语义分割、实例分割、医学影像分割。</p>
+              <em>查看详情</em>
+            </article>
+            <article data-detail="inspection" tabindex="0" role="button" aria-label="查看工业质检详情">
+              <h3>工业质检</h3>
+              <p>缺陷检测、瑕疵识别、异常预警。</p>
+              <em>查看详情</em>
+            </article>
+            <article data-detail="vision3d" tabindex="0" role="button" aria-label="查看 3D 视觉详情">
+              <h3>3D 视觉</h3>
+              <p>三维重建、空间理解、视觉测量。</p>
+              <em>查看详情</em>
+            </article>
+            <article data-detail="document" tabindex="0" role="button" aria-label="查看文档与场景理解详情">
+              <h3>文档与场景理解</h3>
+              <p>OCR、版面解析、图文理解。</p>
+              <em>查看详情</em>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section team-section" id="team">
+        <div class="section-head">
+          <span class="section-kicker">Team</span>
+          <h2>核心人员</h2>
+        </div>
+        <div class="team-grid">
+          <article class="person-card">
+            <div class="avatar-frame avatar-ceo">
+              <img src="assets/images/chongjie.JPG" alt="司翀杰头像" />
+            </div>
+            <div class="person-copy">
+              <span>CEO</span>
+              <h3>司翀杰</h3>
+              <p>
+                上海霁智云图科技有限公司 CEO，上海交通大学人工智能博士。长期从事大模型训练、部署、API 聚合与产业化服务，具备算法研发、工程系统搭建和 AI 商业化交付经验。曾参与多项人工智能研究与产业项目，发表多篇学术论文，关注如何把前沿模型能力转化为稳定、可运营、可规模化的企业智能基础设施。
+              </p>
+            </div>
+          </article>
+          <article class="person-card">
+            <div class="avatar-frame avatar-scientist">
+              <img src="assets/images/weishen.png" alt="沈为教授头像" />
+            </div>
+            <div class="person-copy">
+              <span>首席科学家</span>
+              <h3>沈为教授</h3>
+              <p>
+                上海霁智云图科技有限公司首席科学家，上海交通大学计算机学院教授，国家优青获得者。研究方向覆盖计算机视觉、深度学习、医学图像分析、图像分割与 3D 视觉，在 TPAMI、IJCV、NeurIPS、ICML、CVPR、ICCV、ECCV、MICCAI 等国际顶级期刊和会议发表 100 余篇论文，并担任多个顶级会议 Area Chair。
+              </p>
+              <a href="https://shenwei1231.github.io" target="_blank" rel="noreferrer">学术主页</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cases-section" id="cases">
+        <div class="section-head">
+          <span class="section-kicker">Selected Work</span>
+          <h2>合作案例</h2>
+        </div>
+        <div class="case-grid">
+          <article class="case-card">
+            <span>视觉 AI</span>
+            <h3>视觉理解与智能质检</h3>
+            <button type="button" data-detail="case-huawei-seg">华为 · 万物分割</button>
+            <button type="button" data-detail="case-huawei-ocr">华为 · 广告 OCR 检测</button>
+            <button type="button" data-detail="case-rail">某铁路部门 · 铁轨质检</button>
+            <button type="button" data-detail="case-semi">某半导体公司 · 生产质检</button>
+          </article>
+          <article class="case-card">
+            <span>大模型服务</span>
+            <h3>模型定制与聚合服务</h3>
+            <button type="button" data-detail="case-juxiang">上海矩向科技有限公司 · 技术服务</button>
+            <button type="button" data-detail="case-api-aggregation">大模型 API 聚合、服务编排与技术支持</button>
+            <button type="button" data-detail="case-bio">某生物公司 · 大模型定制化服务</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section architecture" id="architecture">
+        <div class="section-head">
+          <span class="section-kicker">Architecture</span>
+          <h2>双通道 AI 落地架构</h2>
+        </div>
+        <div class="arch-grid" aria-label="双通道 AI 落地架构">
+          <div class="arch-node" data-arch="data" tabindex="0">企业数据</div>
+          <div class="arch-node" data-arch="llm" tabindex="0">大模型服务</div>
+          <div class="arch-node highlight" data-arch="api" tabindex="0">API 工厂</div>
+          <div class="arch-node" data-arch="vision" tabindex="0">视觉 AI 服务</div>
+          <div class="arch-node" data-arch="delivery" tabindex="0">技术交付</div>
+        </div>
+        <div class="arch-insight" aria-live="polite">
+          <span data-arch-kicker>Architecture Node</span>
+          <strong data-arch-title>双通道协同</strong>
+          <p data-arch-copy>大模型服务与视觉 AI 服务并行建设，也可在 API 工厂中统一编排，形成面向业务系统的智能能力层。</p>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-head">
+          <span class="section-kicker">Contact</span>
+          <h2>联系霁智云图</h2>
+        </div>
+        <div class="contact-console">
+          <div class="contact-console-body">
+            <span class="contact-label">CEO</span>
+            <strong>司翀杰</strong>
+            <a href="mailto:S601175936@gmail.com">S601175936@gmail.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 上海霁智云图科技有限公司</span>
+      <span>Jizhi Cloud Atlas Technology</span>
+    </footer>
+
+    <div class="detail-modal" data-modal aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" type="button" data-close-modal aria-label="关闭详情">×</button>
+        <span class="modal-kicker" data-modal-kicker></span>
+        <h2 id="modal-title" data-modal-title></h2>
+        <p data-modal-copy></p>
+        <ul data-modal-list></ul>
+      </section>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
