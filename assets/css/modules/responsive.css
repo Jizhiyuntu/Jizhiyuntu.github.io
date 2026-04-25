@@ -1,4 +1,8 @@
 @media (max-width: 980px) {
+  .system-rail {
+    display: none;
+  }
+
   .nav {
     display: none;
   }
@@ -6,6 +10,14 @@
   .hero,
   .split-section {
     grid-template-columns: 1fr;
+  }
+
+  .api-demo {
+    grid-template-columns: 1fr;
+  }
+
+  .model-router-demo {
+    min-height: 280px;
   }
 
   .hero-console {
@@ -108,11 +120,48 @@
   }
 
   .factory-visual {
-    min-height: 390px;
+    min-height: 720px;
+  }
+
+  .api-demo {
+    padding: 24px;
+  }
+
+  .server-stack span {
+    min-height: 50px;
+  }
+
+  .segmentation-demo {
+    inset: 16px;
+  }
+
+  .seg-label {
+    font-size: 10px;
+  }
+
+  .request-stream {
+    right: 24px;
+    bottom: 18px;
+    left: 24px;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .request-stream i {
+    display: none;
   }
 
   .contact-console-body {
     grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-email {
+    min-width: 0;
   }
 
   .person-card {

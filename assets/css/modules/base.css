@@ -11,6 +11,9 @@
   --violet: #8c7bff;
   --electric: #74a7ff;
   --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.055);
+  --glass-strong: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(60, 230, 210, 0.36);
   --max: 1240px;
   --cursor-x: 50vw;
   --cursor-y: 50vh;
@@ -22,13 +25,22 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: rgba(60, 230, 210, 0.5) rgba(4, 14, 17, 0.86);
+}
+
+::selection {
+  background: rgba(60, 230, 210, 0.28);
+  color: var(--white);
 }
 
 body {
   position: relative;
   margin: 0;
   font-family: "Inter", "Noto Sans SC", system-ui, sans-serif;
-  background: var(--ink);
+  background:
+    radial-gradient(circle at 52% -12%, rgba(60, 230, 210, 0.12), transparent 34%),
+    radial-gradient(circle at 8% 52%, rgba(255, 111, 97, 0.07), transparent 28%),
+    var(--ink);
   color: var(--text);
   letter-spacing: 0;
   text-rendering: optimizeLegibility;
@@ -60,6 +72,19 @@ main,
   z-index: 1;
 }
 
+main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 0 18%, rgba(60, 230, 210, 0.045) 18.2%, transparent 31%),
+    linear-gradient(65deg, transparent 0 56%, rgba(255, 209, 102, 0.035) 56.2%, transparent 72%);
+  opacity: 0.8;
+  mix-blend-mode: screen;
+}
+
 body::after {
   content: "";
   position: fixed;
@@ -77,6 +102,62 @@ body::after {
   opacity: 0.22;
 }
 
+.system-rail {
+  position: fixed;
+  top: 50%;
+  left: clamp(14px, 2vw, 28px);
+  z-index: 18;
+  display: grid;
+  width: 22px;
+  height: min(360px, 48vh);
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  color: rgba(238, 248, 248, 0.48);
+  font-size: 10px;
+  font-weight: 900;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.system-rail::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateX(-50%);
+}
+
+.system-rail span,
+.system-rail b {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.system-rail i {
+  position: relative;
+  display: block;
+  width: 2px;
+  height: 100%;
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.system-rail i::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: var(--scroll-progress, 0%);
+  background: linear-gradient(to bottom, var(--cyan), var(--amber));
+  box-shadow: 0 0 18px rgba(60, 230, 210, 0.68);
+}
+
 .cursor-glow {
   position: fixed;
   left: var(--cursor-x);
@@ -85,7 +166,9 @@ body::after {
   width: 420px;
   height: 420px;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(60, 230, 210, 0.12), transparent 62%);
+  background:
+    radial-gradient(circle, rgba(60, 230, 210, 0.13), transparent 58%),
+    radial-gradient(circle at 34% 28%, rgba(255, 209, 102, 0.08), transparent 34%);
   mix-blend-mode: screen;
   opacity: 0.78;
   transform: translate(-50%, -50%);
@@ -104,12 +187,14 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  padding: 18px clamp(18px, 4vw, 56px);
+  padding: 16px clamp(18px, 4vw, 56px);
   transition: background 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
 }
 
 .site-header.is-scrolled {
-  background: rgba(5, 16, 19, 0.82);
+  background:
+    linear-gradient(90deg, rgba(60, 230, 210, 0.06), transparent 48%, rgba(255, 209, 102, 0.035)),
+    rgba(5, 16, 19, 0.82);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px);
 }
@@ -127,6 +212,9 @@ a {
   border: 1px solid rgba(60, 230, 210, 0.55);
   background: rgba(60, 230, 210, 0.08);
   object-fit: cover;
+  box-shadow:
+    0 0 0 4px rgba(60, 230, 210, 0.04),
+    0 0 26px rgba(60, 230, 210, 0.12);
 }
 
 .brand-copy {
@@ -224,7 +312,10 @@ a {
 }
 
 .header-cta {
-  background: rgba(60, 230, 210, 0.12);
+  border-color: rgba(60, 230, 210, 0.28);
+  background:
+    linear-gradient(90deg, rgba(60, 230, 210, 0.14), rgba(116, 167, 255, 0.05)),
+    rgba(60, 230, 210, 0.08);
   color: var(--cyan);
 }
 
@@ -232,4 +323,3 @@ a {
 .header-cta:hover {
   transform: translateY(-2px);
 }
-

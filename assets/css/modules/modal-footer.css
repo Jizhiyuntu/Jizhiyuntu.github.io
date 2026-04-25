@@ -29,15 +29,30 @@
   overflow: hidden;
   width: min(680px, 100%);
   padding: clamp(26px, 4vw, 42px);
-  border: 1px solid rgba(60, 230, 210, 0.42);
+  border: 1px solid rgba(60, 230, 210, 0.46);
   background:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     rgba(4, 14, 17, 0.94);
   background-size: 38px 38px, 38px 38px, auto;
-  box-shadow: 0 34px 120px rgba(0, 0, 0, 0.52);
+  box-shadow:
+    0 34px 120px rgba(0, 0, 0, 0.52),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
   transform: translateY(14px) scale(0.98);
   transition: transform 0.22s ease;
+}
+
+.modal-panel::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 86px;
+  height: 86px;
+  border-right: 1px solid rgba(60, 230, 210, 0.38);
+  border-bottom: 1px solid rgba(60, 230, 210, 0.38);
+  pointer-events: none;
+  opacity: 0.76;
 }
 
 .detail-modal.is-open .modal-panel {
@@ -113,12 +128,30 @@
 }
 
 .footer {
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding: 26px clamp(20px, 6vw, 74px);
+  padding: 30px clamp(20px, 6vw, 74px);
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 13px;
 }
 
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(60, 230, 210, 0.08), transparent),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: auto, 100% 22px;
+  opacity: 0.9;
+}
+
+.footer span {
+  position: relative;
+  z-index: 1;
+}

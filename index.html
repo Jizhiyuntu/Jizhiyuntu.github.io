@@ -29,13 +29,17 @@
       <nav class="nav" aria-label="主导航">
         <a href="#services">大模型服务</a>
         <a href="#vision">视觉 AI</a>
-        <a href="#cases">案例</a>
         <a href="#team">人员</a>
+        <a href="#cases">案例</a>
         <a href="#architecture">架构</a>
-        <a href="#contact">联系</a>
       </nav>
       <a class="header-cta" href="#contact">联系我们</a>
     </header>
+    <div class="system-rail" aria-hidden="true">
+      <span>AI</span>
+      <i data-scroll-progress></i>
+      <b data-scroll-percent>00%</b>
+    </div>
 
     <main id="top">
       <section class="hero" aria-label="公司介绍">
@@ -208,11 +212,31 @@
 
       <section class="split-section" id="factory">
         <div class="factory-visual" aria-hidden="true">
-          <div class="pipeline">
-            <span data-detail="factory">模型接入</span>
-            <span data-detail="api">统一路由</span>
-            <span data-detail="factory">API 生产</span>
-            <span data-detail="deployment">监控计费</span>
+          <div class="api-demo">
+            <div class="server-stack">
+              <span>GPU NODE 01</span>
+              <span>GPU NODE 02</span>
+              <span>PRIVATE CLOUD</span>
+            </div>
+            <div class="model-router-demo">
+              <span>LLM</span>
+              <span>EMBED</span>
+              <strong data-detail="api">ROUTER</strong>
+              <span>RERANK</span>
+              <span>RAG</span>
+            </div>
+            <div class="api-endpoint">
+              <small>Unified Endpoint</small>
+              <code>POST /v1/ai/invoke</code>
+              <b>API READY</b>
+            </div>
+            <div class="request-stream" aria-hidden="true">
+              <span>prompt</span>
+              <i></i>
+              <span>guard</span>
+              <i></i>
+              <span>response</span>
+            </div>
           </div>
         </div>
         <div class="split-copy">
@@ -236,14 +260,22 @@
         </div>
         <div class="vision-layout">
           <div class="vision-scope" aria-hidden="true">
-            <div class="scope-frame">
-              <span></span>
-              <span></span>
-              <span></span>
-              <i></i>
+            <div class="segmentation-demo">
+              <div class="demo-image">
+                <span class="seg-mask mask-person"></span>
+                <span class="seg-mask mask-robot"></span>
+                <span class="seg-mask mask-package"></span>
+                <i class="scan-line"></i>
+              </div>
+              <div class="seg-label label-person">person 97.8%</div>
+              <div class="seg-label label-robot">robot arm 96.4%</div>
+              <div class="seg-label label-package">package 94.9%</div>
+              <div class="segmentation-matrix" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
             </div>
             <div class="scope-readout">
-              <b>SEGMENTATION MAP</b>
+              <b>INSTANCE SEGMENTATION</b>
               <strong data-scope-score>--</strong>
             </div>
           </div>
@@ -359,8 +391,24 @@
         </div>
         <div class="contact-console">
           <div class="contact-console-body">
-            <span class="contact-label"></span>
-            <a href="mailto:S601175936@gmail.com">S601175936@gmail.com</a>
+            <div class="contact-intro">
+              <span class="contact-label">Open Channel</span>
+              <strong>让智能系统进入真实业务现场</strong>
+              <p>如果你正在寻找 AI 项目合作、模型服务交付，或希望加入一支面向产业落地的技术团队，欢迎与我们联系。</p>
+              <a class="contact-email" href="mailto:S601175936@gmail.com">S601175936@gmail.com</a>
+            </div>
+            <div class="contact-grid">
+              <article>
+                <span>Business</span>
+                <h3>商务洽谈</h3>
+                <p>企业 AI 咨询、大模型 API 聚合、私有化部署、视觉算法与长期技术服务。</p>
+              </article>
+              <article>
+                <span>Careers</span>
+                <h3>招聘相关</h3>
+                <p>欢迎算法、工程、产品、解决方案与行业交付方向的伙伴交流。</p>
+              </article>
+            </div>
           </div>
         </div>
       </section>

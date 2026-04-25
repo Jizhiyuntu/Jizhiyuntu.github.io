@@ -15,7 +15,9 @@ const reactiveSelectors = [
   ".contact-console",
   ".arch-grid",
   ".arch-node",
-  ".pipeline span",
+  ".model-router-demo span",
+  ".model-router-demo strong",
+  ".api-endpoint",
   ".hero-metrics div",
   ".console-tabs button",
   ".ai-lab button",
@@ -27,6 +29,7 @@ const reactiveSelectors = [
 
 function initInteractions() {
   initHeader();
+  initScrollProgress();
   initCursorGlow();
   initReactiveHover();
   initDetailModal();
@@ -41,6 +44,23 @@ function initInteractions() {
   initVisionLine();
   initArchitecture();
   initReveal();
+}
+
+function initScrollProgress() {
+  const progress = document.querySelector("[data-scroll-progress]");
+  const percent = document.querySelector("[data-scroll-percent]");
+  if (!progress || !percent) return;
+
+  const update = () => {
+    const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    const value = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+    progress.style.setProperty("--scroll-progress", `${value * 100}%`);
+    percent.textContent = `${String(Math.round(value * 100)).padStart(2, "0")}%`;
+  };
+
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
 }
 
 function initHeader() {
@@ -226,12 +246,18 @@ function initLabTabs() {
 
 function initServiceCards() {
   const cards = document.querySelectorAll(".service-card");
+  const clear = () => {
+    cards.forEach((item) => item.classList.remove("is-active"));
+  };
+
   cards.forEach((card) => {
     const activate = () => {
       cards.forEach((item) => item.classList.toggle("is-active", item === card));
     };
     card.addEventListener("pointerenter", activate);
+    card.addEventListener("pointerleave", clear);
     card.addEventListener("focus", activate);
+    card.addEventListener("blur", clear);
   });
 }
 
@@ -348,7 +374,7 @@ function initArchitecture() {
 
 function initReveal() {
   const revealElements = document.querySelectorAll(
-    ".section, .split-section, .service-card, .vision-grid article, .case-card, .person-card, .arch-node, .service-orbit, .vision-scope, .lab-panel"
+    ".section, .split-section, .service-card, .vision-grid article, .case-card, .person-card, .arch-node, .service-orbit, .vision-scope, .lab-panel, .factory-visual"
   );
 
   if (!("IntersectionObserver" in window)) {

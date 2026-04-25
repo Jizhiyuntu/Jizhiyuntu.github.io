@@ -10,7 +10,8 @@
   background:
     radial-gradient(circle at 12% 20%, rgba(255, 111, 97, 0.18), transparent 28%),
     radial-gradient(circle at 78% 70%, rgba(116, 167, 255, 0.16), transparent 32%),
-    linear-gradient(135deg, #071014 0%, #0c1e1f 48%, #101412 100%);
+    radial-gradient(ellipse at 44% 40%, rgba(60, 230, 210, 0.12), transparent 42%),
+    linear-gradient(135deg, #071014 0%, #0b1e1f 48%, #101412 100%);
 }
 
 .hero::before {
@@ -120,6 +121,7 @@
 
 .hero-content {
   max-width: 860px;
+  filter: drop-shadow(0 28px 80px rgba(0, 0, 0, 0.22));
 }
 
 .eyebrow,
@@ -147,6 +149,10 @@ h1 {
   line-height: 1.04;
   font-weight: 900;
   white-space: normal;
+  background: linear-gradient(180deg, #ffffff 0%, #dfe9e7 52%, #9fb7b5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   text-shadow: 0 0 46px rgba(60, 230, 210, 0.18);
 }
 
@@ -226,7 +232,9 @@ h1::after {
   min-height: 30px;
   padding: 6px 11px;
   border: 1px solid rgba(255, 255, 255, 0.13);
-  background: rgba(255, 255, 255, 0.045);
+  background:
+    linear-gradient(90deg, rgba(60, 230, 210, 0.08), transparent),
+    rgba(255, 255, 255, 0.045);
   color: rgba(238, 248, 248, 0.74);
   font-size: 12px;
   font-weight: 800;
@@ -282,10 +290,13 @@ h1::after {
   gap: 3px;
   min-height: 66px;
   padding: 13px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   background:
     linear-gradient(90deg, rgba(60, 230, 210, 0.08), transparent),
     rgba(255, 255, 255, 0.035);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 18px 60px rgba(0, 0, 0, 0.12);
 }
 
 .intelligence-strip span::before {
@@ -401,6 +412,7 @@ h1::after {
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.03), transparent);
 }
 
 .hero-metrics div {
@@ -434,17 +446,30 @@ h1::after {
 .hero-console {
   align-self: end;
   margin-bottom: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(60, 230, 210, 0.24);
   background:
     linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px),
     rgba(4, 14, 17, 0.72);
   background-size: 32px 32px, 32px 32px, auto;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
 }
 
+.hero-console::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 28% 72%, rgba(60, 230, 210, 0.08));
+  opacity: 0.82;
+}
+
 .console-bar {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 8px;
   padding: 16px 18px;
@@ -468,6 +493,8 @@ h1::after {
 
 .console-line,
 .console-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 12px;
   padding: 20px;
@@ -484,6 +511,8 @@ h1::after {
 }
 
 .console-tabs {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
@@ -530,6 +559,8 @@ h1::after {
 }
 
 .console-output {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 8px;
   margin: 0 20px 18px;
@@ -609,6 +640,8 @@ h1::after {
 }
 
 .signal-bars {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 6px;
