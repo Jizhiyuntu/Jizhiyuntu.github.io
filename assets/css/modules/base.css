@@ -1,0 +1,235 @@
+:root {
+  --ink: #061115;
+  --panel: rgba(8, 20, 24, 0.74);
+  --line: rgba(255, 255, 255, 0.14);
+  --text: #eef8f8;
+  --muted: #a9babc;
+  --cyan: #3ce6d2;
+  --mint: #8ff5b3;
+  --amber: #ffd166;
+  --coral: #ff6f61;
+  --violet: #8c7bff;
+  --electric: #74a7ff;
+  --white: #ffffff;
+  --max: 1240px;
+  --cursor-x: 50vw;
+  --cursor-y: 50vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  font-family: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  background: var(--ink);
+  color: var(--text);
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(60, 230, 210, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(60, 230, 210, 0.028) 1px, transparent 1px),
+    radial-gradient(circle at 78% 16%, rgba(60, 230, 210, 0.12), transparent 28%),
+    radial-gradient(circle at 18% 74%, rgba(255, 111, 97, 0.08), transparent 30%),
+    conic-gradient(from 180deg at 50% 50%, transparent, rgba(116, 167, 255, 0.055), transparent 26%);
+  background-size: 72px 72px, 72px 72px, auto, auto;
+  animation: grid-drift 18s linear infinite;
+}
+
+main,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.026) 0,
+    rgba(255, 255, 255, 0.026) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+  mix-blend-mode: screen;
+  opacity: 0.22;
+}
+
+.cursor-glow {
+  position: fixed;
+  left: var(--cursor-x);
+  top: var(--cursor-y);
+  z-index: 2;
+  width: 420px;
+  height: 420px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(60, 230, 210, 0.12), transparent 62%);
+  mix-blend-mode: screen;
+  opacity: 0.78;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 18px clamp(18px, 4vw, 56px);
+  transition: background 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(5, 16, 19, 0.82);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 218px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(60, 230, 210, 0.55);
+  background: rgba(60, 230, 210, 0.08);
+  object-fit: cover;
+}
+
+.brand-copy {
+  display: grid;
+  gap: 1px;
+}
+
+.brand-copy strong {
+  font-size: 15px;
+}
+
+.brand-copy small {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(16px, 3vw, 34px);
+  color: rgba(238, 248, 248, 0.78);
+  font-size: 14px;
+}
+
+.nav a {
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 2px;
+  background: var(--cyan);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.24s ease;
+}
+
+.nav a:hover {
+  color: var(--cyan);
+}
+
+.nav a.is-active {
+  color: var(--text);
+}
+
+.nav a.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.header-cta,
+.button {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.header-cta::before,
+.button::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.34), transparent 42%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.header-cta:hover::before,
+.button:hover::before {
+  opacity: 1;
+}
+
+.header-cta span,
+.button span {
+  position: relative;
+  z-index: 1;
+}
+
+.header-cta {
+  background: rgba(60, 230, 210, 0.12);
+  color: var(--cyan);
+}
+
+.button:hover,
+.header-cta:hover {
+  transform: translateY(-2px);
+}
+

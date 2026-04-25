@@ -1,0 +1,124 @@
+.detail-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.detail-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(60, 230, 210, 0.16), transparent 28%),
+    rgba(1, 8, 10, 0.74);
+  backdrop-filter: blur(14px);
+}
+
+.modal-panel {
+  position: relative;
+  overflow: hidden;
+  width: min(680px, 100%);
+  padding: clamp(26px, 4vw, 42px);
+  border: 1px solid rgba(60, 230, 210, 0.42);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    rgba(4, 14, 17, 0.94);
+  background-size: 38px 38px, 38px 38px, auto;
+  box-shadow: 0 34px 120px rgba(0, 0, 0, 0.52);
+  transform: translateY(14px) scale(0.98);
+  transition: transform 0.22s ease;
+}
+
+.detail-modal.is-open .modal-panel {
+  transform: translateY(0) scale(1);
+}
+
+.modal-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent, rgba(60, 230, 210, 0.12), transparent);
+  transform: translateX(-120%);
+  animation: scan-sweep 5s ease-in-out infinite;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.modal-kicker {
+  position: relative;
+  z-index: 1;
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.modal-panel h2 {
+  position: relative;
+  z-index: 1;
+  margin: 16px 0 14px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.12;
+}
+
+.modal-panel p {
+  position: relative;
+  z-index: 1;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.modal-panel ul {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 24px 0 0;
+  list-style: none;
+}
+
+.modal-panel li {
+  padding-left: 24px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+  background: linear-gradient(90deg, var(--cyan) 0 10px, transparent 10px) left 0.72em / 16px 2px no-repeat;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px clamp(20px, 6vw, 74px);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+

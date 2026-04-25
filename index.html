@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="上海霁智云图科技有限公司提供企业级大模型服务、API 工厂与视觉 AI 技术服务。"
+      content="霁智云图提供企业级大模型服务、API 工厂与视觉 AI 技术服务。"
     />
-    <title>上海霁智云图科技有限公司</title>
+    <title>霁智云图 | 企业级 AI 技术服务</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
       rel="stylesheet"
@@ -18,7 +19,7 @@
   </head>
   <body>
     <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="上海霁智云图科技有限公司首页">
+      <a class="brand" href="#top" aria-label="霁智云图首页">
         <img class="brand-mark" src="assets/images/logo.svg" alt="" />
         <span class="brand-copy">
           <strong>霁智云图</strong>
@@ -40,16 +41,53 @@
       <section class="hero" aria-label="公司介绍">
         <canvas id="atlas-canvas" aria-hidden="true"></canvas>
         <div class="hero-noise" aria-hidden="true"></div>
+        <div class="neural-aura" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div class="hero-content">
-          <p class="eyebrow">Vision for Applied Intelligence</p>
-          <h1>上海霁智云图科技有限公司</h1>
+          <p class="eyebrow">AI Infrastructure for Industry</p>
+          <h1 data-glitch="霁智云图">霁智云图</h1>
+          <div class="cognitive-ribbon" aria-hidden="true">
+            <span>Perceive</span>
+            <i></i>
+            <span>Reason</span>
+            <i></i>
+            <span>Deploy</span>
+          </div>
+          <div class="hero-tags" aria-label="公司能力标签">
+            <span>LLM Engineering</span>
+            <span>API Factory</span>
+            <span>Computer Vision</span>
+          </div>
           <p class="hero-lede">
-            让智能真正进入产业现场，把模型、视觉与工程能力连接成可持续进化的生产力。
+            为企业构建可训练、可部署、可运营的 AI 能力层
           </p>
           <p class="vision-line" data-vision-line>让模型成为可运营的智能基础设施</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#intro">了解我们</a>
-            <a class="button ghost" href="#cases">查看案例</a>
+          <div class="intelligence-strip" aria-label="智能系统实时状态">
+            <span>
+              <b data-smart-stat="agents">--</b>
+              <small>Agents</small>
+            </span>
+            <span>
+              <b data-smart-stat="tokens">--</b>
+              <small>Tokens/s</small>
+            </span>
+            <span>
+              <b data-smart-stat="confidence">--</b>
+              <small>Confidence</small>
+            </span>
+          </div>
+          <div class="hero-command" aria-label="首屏快捷入口">
+            <a href="#intro">
+              <span>01</span>
+              <strong>进入能力图谱</strong>
+            </a>
+            <a href="#cases">
+              <span>02</span>
+              <strong>读取合作案例</strong>
+            </a>
           </div>
           <div class="hero-metrics" aria-label="核心能力指标">
             <div>
@@ -76,13 +114,27 @@
             <span>MODEL ROUTER</span>
             <strong>ONLINE</strong>
           </div>
+          <div class="console-tabs" aria-label="运行视图">
+            <button class="is-active" type="button" data-console-mode="route">路由</button>
+            <button type="button" data-console-mode="train">训练</button>
+            <button type="button" data-console-mode="vision">视觉</button>
+          </div>
           <div class="console-grid">
             <span>训练任务</span>
-            <b>12</b>
+            <b data-console-value="tasks">--</b>
             <span>推理节点</span>
-            <b>38</b>
+            <b data-console-value="nodes">--</b>
             <span>知识库索引</span>
-            <b>8.6M</b>
+            <b data-console-value="index">--</b>
+          </div>
+          <div class="console-output" aria-live="polite">
+            <span data-console-kicker>Latency Optimizer</span>
+            <p data-console-copy>按质量、成本与时延动态选择模型通道，保持企业应用稳定响应。</p>
+          </div>
+          <div class="ai-decision" aria-live="polite">
+            <span>AI DECISION</span>
+            <strong data-decision-title>正在评估最优模型通道</strong>
+            <p data-decision-copy>系统根据时延、成本、上下文长度与视觉任务置信度自动编排。</p>
           </div>
           <div class="signal-bars" aria-hidden="true">
             <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -96,12 +148,35 @@
         <p>
           大模型服务覆盖训练、部署、API 聚合与 AI 工厂。视觉 AI 服务覆盖分割、质检、3D 视觉与图文理解。
         </p>
+        <div class="ai-lab" aria-label="AI 能力编排">
+          <button class="is-active" type="button" data-lab-tab="private">私有化模型</button>
+          <button type="button" data-lab-tab="router">智能路由</button>
+          <button type="button" data-lab-tab="vision">视觉理解</button>
+          <button type="button" data-lab-tab="ops">持续运维</button>
+        </div>
+        <div class="lab-panel" aria-live="polite">
+          <span data-lab-kicker>Private Model</span>
+          <strong data-lab-title>企业专属模型能力</strong>
+          <p data-lab-copy>围绕企业数据、行业流程与权限边界，完成训练、评测、部署和调用闭环。</p>
+          <div class="lab-telemetry" aria-label="能力运行指标">
+            <span><b data-lab-stat="quality">--</b> 评测分</span>
+            <span><b data-lab-stat="latency">--</b> ms</span>
+            <span><b data-lab-stat="saving">--</b> 成本优化</span>
+          </div>
+        </div>
       </section>
 
       <section class="section services" id="services">
         <div class="section-head">
           <span class="section-kicker">LLM Services</span>
           <h2>大模型服务</h2>
+        </div>
+        <div class="service-orbit" aria-hidden="true">
+          <span>Data</span>
+          <span>Train</span>
+          <span>Deploy</span>
+          <span>API</span>
+          <span>Monitor</span>
         </div>
         <div class="service-grid">
           <article class="service-card" data-detail="training" tabindex="0" role="button" aria-label="查看定制化训练详情">
@@ -160,6 +235,18 @@
           <h2>视觉 AI 服务</h2>
         </div>
         <div class="vision-layout">
+          <div class="vision-scope" aria-hidden="true">
+            <div class="scope-frame">
+              <span></span>
+              <span></span>
+              <span></span>
+              <i></i>
+            </div>
+            <div class="scope-readout">
+              <b>SEGMENTATION MAP</b>
+              <strong data-scope-score>--</strong>
+            </div>
+          </div>
           <div class="vision-grid">
             <article data-detail="segmentation" tabindex="0" role="button" aria-label="查看图像分割详情">
               <h3>图像分割</h3>
@@ -255,6 +342,9 @@
           <div class="arch-node" data-arch="vision" tabindex="0">视觉 AI 服务</div>
           <div class="arch-node" data-arch="delivery" tabindex="0">技术交付</div>
         </div>
+        <div class="arch-flow" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
         <div class="arch-insight" aria-live="polite">
           <span data-arch-kicker>Architecture Node</span>
           <strong data-arch-title>双通道协同</strong>
@@ -265,7 +355,7 @@
       <section class="section contact-section" id="contact">
         <div class="section-head">
           <span class="section-kicker">Contact</span>
-          <h2>联系霁智云图</h2>
+          <h2>联系我们</h2>
         </div>
         <div class="contact-console">
           <div class="contact-console-body">
@@ -292,6 +382,9 @@
       </section>
     </div>
 
+    <script src="assets/js/modules/content.js"></script>
+    <script src="assets/js/modules/interactions.js"></script>
+    <script src="assets/js/modules/hero-canvas.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

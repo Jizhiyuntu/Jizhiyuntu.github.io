@@ -1,0 +1,140 @@
+@media (max-width: 980px) {
+  .nav {
+    display: none;
+  }
+
+  .hero,
+  .split-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-console {
+    max-width: 420px;
+    margin: 0;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vision-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arch-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    padding: 14px 16px;
+  }
+
+  .brand {
+    min-width: auto;
+  }
+
+  .brand-copy small,
+  .header-cta {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 104px 18px 56px;
+  }
+
+  .hero-console {
+    display: none;
+  }
+
+  h1 {
+    font-size: clamp(52px, 18vw, 78px);
+    white-space: normal;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .section-head h2 {
+    text-align: left;
+  }
+
+  .hero-metrics,
+  .intelligence-strip,
+  .lab-telemetry,
+  .service-grid,
+  .service-orbit,
+  .vision-grid,
+  .case-grid,
+  .arch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-orbit::before {
+    top: 8%;
+    left: 50%;
+    width: 1px;
+    height: 84%;
+    transform-origin: center;
+  }
+
+  .hero-metrics div {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-metrics div:last-child {
+    border-bottom: 0;
+  }
+
+  .section,
+  .split-section {
+    padding: 68px 18px;
+  }
+
+  .service-card {
+    min-height: 230px;
+  }
+
+  .factory-visual {
+    min-height: 390px;
+  }
+
+  .contact-console-body {
+    grid-template-columns: 1fr;
+  }
+
+  .person-card {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
